@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardContent, Typography } from "@mui/material";
-import Highlight from "./Highlight";
+import Highlight from "../Highlight";
 
 interface ArticleCardProps {
   title: string;
