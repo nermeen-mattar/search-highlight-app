@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
-import { Typography, Card, CardContent } from "@mui/material";
+import { Typography } from "@mui/material";
+import ArticleCard from "./ArticleCard";
 
 const articles = [
   { id: 1, title: "Understanding the difference between grid-template and grid-auto", date: "Oct 09, 2018", content: "With all the new properties related to CSS Grid Layout..." },
@@ -21,13 +22,7 @@ export const ArticlesList: React.FC<{ searchTerm: string }> = ({ searchTerm }) =
         {filteredArticles.length} posts found.
       </Typography>
       {filteredArticles.map((article) => (
-        <Card key={article.id} sx={{ mt: 2 }}>
-          <CardContent>
-            <Typography variant="h6">{article.title}</Typography>
-            <Typography variant="caption" color="textSecondary">{article.date}</Typography>
-            <Typography variant="body2">{article.content}</Typography>
-          </CardContent>
-        </Card>
+        <ArticleCard title={article.title} content={article.content} date={article.date} searchTerm={searchTerm}/>
       ))}
     </>
   );
